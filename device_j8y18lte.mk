@@ -8,6 +8,18 @@ $(call inherit-product-if-exists, vendor/samsung/j8y18lte/j8y18lte-vendor.mk)
 DEVICE_PACKAGE_OVERLAYS += device/samsung/j8y18lte/overlay
 
 
+# Ramdisk
+PRODUCT_PACKAGES += \
+    fstab.qcom \
+    init.qcom.rc \
+    init.qcom.usb.rc \
+    init.msm.usb.configfs.rc \
+    init.qcom.factory.rc \
+    init.carrier.rc \
+    init.target.rc \
+    ueventd.rc \
+
+
 
 $(call inherit-product, build/target/product/full.mk)
 
