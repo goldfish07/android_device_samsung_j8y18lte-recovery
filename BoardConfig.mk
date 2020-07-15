@@ -5,7 +5,7 @@ USE_CAMERA_STUB := true
 
 TARGET_ARCH := arm64
 TARGET_NO_BOOTLOADER := true
-TARGET_BOARD_PLATFORM := unknown
+
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
 TARGET_ARCH_VARIANT := armv8-a
@@ -20,7 +20,13 @@ TARGET_2ND_CPU_VARIANT := cortex-a53
 TARGET_CPU_SMP := true
 ARCH_ARM_HAVE_TLS_REGISTER := true
 
-TARGET_BOOTLOADER_BOARD_NAME := j8y18lte
+TARGET_BOARD_PLATFORM := msm8953
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno506
+TARGET_BOOTLOADER_BOARD_NAME := MSM8953
+
+TARGET_BOARD_SUFFIX := _64
+TARGET_USES_64_BIT_BINDER := true
+
 
 BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x0x80000000
