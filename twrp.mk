@@ -8,6 +8,7 @@ RECOVERY_SDCARD_ON_DATA := true
 BOARD_HAS_NO_REAL_SDCARD := true
 TARGET_RECOVERY_PIXEL_FORMAT := "ABGR_8888"
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
+TW_CUSTOM_BATTERY_PATH := "/sys/devices/battery/power_supply/battery"
 TW_NO_REBOOT_BOOTLOADER := true
 TW_HAS_DOWNLOAD_MODE := true
 TW_INCLUDE_CRYPTO := true
@@ -20,6 +21,7 @@ TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
 TW_DEVICE_VERSION := goldfish07
 TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID := true
+
 
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
