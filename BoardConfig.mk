@@ -1,5 +1,6 @@
 USE_CAMERA_STUB := true
 
+DEVICE_PATH := device/samsung/j8y18lte
 # inherit from the proprietary version
 -include vendor/samsung/j8y18lte/BoardConfigVendor.mk
 
@@ -52,4 +53,10 @@ BOARD_PERSISTIMAGE_PARTITION_SIZE := 1048576 #31
 BOARD_FLASH_BLOCK_SIZE := 131072
 
 
+# Recovery
 BOARD_HAS_NO_SELECT_BUTTON := true
+BOARD_HAS_LARGE_FILESYSTEM := true
+BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
+BOARD_SUPPRESS_SECURE_ERASE := true
+BOARD_HAS_DOWNLOAD_MODE := true
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
