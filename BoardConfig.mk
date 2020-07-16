@@ -1,14 +1,15 @@
 USE_CAMERA_STUB := true
-
+LOCAL_PATH := $(call my-dir)
 DEVICE_PATH := device/samsung/j8y18lte
 # inherit from the proprietary version
 -include vendor/samsung/j8y18lte/BoardConfigVendor.mk
 
 OLD_PLATFORM := \
 	8.0.0 \
-	8.1.0
+	8.1.0 \
 
-ifeq($(filter $(OLD_PLATFORM),$(PLATFORM_VERSION)))
+ifeq ($(filter OLD_PLATFORM,$(PLATFORM_VERSION)),)
+
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT :=  armv7-a-neon
 TARGET_CPU_ABI := armeabi-v7a
