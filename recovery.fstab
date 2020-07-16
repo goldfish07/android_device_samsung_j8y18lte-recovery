@@ -43,5 +43,6 @@
 /misc      emmc  /dev/block/bootdevice/by-name/misc        defaults                  defaults
 
 # Removable storage
-/usb-otg         auto              /dev/block/sda1         /dev/block/sda   flags=removable;storage;display="USB OTG"
 /external_sd     vfat              /dev/block/mmcblk1p1    /dev/block/mmcblk1   flags=removable;storage;display="External SD Card";wipeingui
+/usb-otg         auto              /dev/block/sda1         /dev/block/sda   flags=removable;storage;display="USB OTG"
+
