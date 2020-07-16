@@ -4,9 +4,19 @@ DEVICE_PATH := device/samsung/j8y18lte
 # inherit from the proprietary version
 -include vendor/samsung/j8y18lte/BoardConfigVendor.mk
 
-TARGET_ARCH := arm64
-TARGET_NO_BOOTLOADER := true
+OLD_PLATFORM := \
+	8.0.0 \
+	8.1.0
 
+ifeq($(filter $(OLD_PLATFORM),$(PLATFORM_VERSION)))
+TARGET_ARCH := arm
+TARGET_ARCH_VARIANT :=  armv7-a-neon
+TARGET_CPU_ABI := armeabi-v7a
+TARGET_CPU_ABI2 := armeabi
+TARGET_CPU_VARIANT := cortex-a53
+
+else 
+TARGET_ARCH := arm64
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
 TARGET_ARCH_VARIANT := armv8-a
@@ -17,6 +27,10 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_ARCH_VARIANT := armv8-a
 TARGET_2ND_CPU_VARIANT := cortex-a53
+endif
+TARGET_CPU_CORTEX_A53 := true
+
+TARGET_NO_BOOTLOADER := true
 
 TARGET_CPU_SMP := true
 ARCH_ARM_HAVE_TLS_REGISTER := true
