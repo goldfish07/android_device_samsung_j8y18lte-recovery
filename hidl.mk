@@ -76,6 +76,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service.basic
 
+# Fingerprint
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.fingerprint@1.0 \
+    vendor.samsung.hardware.biometrics.fingerprint@2.1
+
 # Configstore
 PRODUCT_PACKAGES += \
     android.hardware.configstore@1.0-service
