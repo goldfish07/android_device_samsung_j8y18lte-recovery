@@ -134,6 +134,9 @@ include $(DEVICE_PATH)/qcom.mk
 # Device modules
 include $(DEVICE_PATH)/device.mk
 
+# Device properties
+include $(DEVICE_PATH)/prop.mk
+
 # Disable adb security
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	ro.mount.fs=EXT4 \
