@@ -68,6 +68,11 @@ PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl \
     android.hardware.vibrator@1.0-service
 
+# Light Sensor
+PRODUCT_PACKAGES += \
+    android.hardware.light@2.0-impl \
+    android.hardware.light@2.0-service 
+
 # Wifi
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service 
