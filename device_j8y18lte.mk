@@ -111,6 +111,11 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/seccomp_policy/mediacodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
     $(DEVICE_PATH)/seccomp_policy/mediaextractor.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaextractor.policy
 
+# Security config
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/etc/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config \
+    $(DEVICE_PATH)/configs/etc/sec_config_oem:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config_oem
+
 # Wifi Configuration
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
