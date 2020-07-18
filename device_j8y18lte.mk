@@ -5,10 +5,12 @@ $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
 $(call inherit-product-if-exists, vendor/samsung/j8y18lte/j8y18lte-vendor.mk)
 
-DEVICE_PACKAGE_OVERLAYS += device/samsung/j8y18lte/overlay
-
 # Tree PATH j8y18lte 
 DEVICE_PATH := device/samsung/j8y18lte
+
+DEVICE_PACKAGE_OVERLAYS += $(DEVICE_PATH)/overlay
+DEVICE_PACKAGE_OVERLAYS += $(DEVICE_PATH)/overlay-lineage
+
 
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
