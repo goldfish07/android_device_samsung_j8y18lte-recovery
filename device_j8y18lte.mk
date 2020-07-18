@@ -115,6 +115,11 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/thermal/thermal-engine.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine.conf
 
 
+# HIDL (HAL Interface Definition Language)
+include $(DEVICE_PATH)/hidl.mk
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/manifest.xml:$(TARGET_COPY_OUT_VENDOR)/manifest.xml
+
 # Disable adb security
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	ro.mount.fs=EXT4 \
