@@ -91,3 +91,5 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
 # filesystem
 TARGET_USES_MKE2FS:=true
 include $(DEVICE_PATH)/twrp.mk
+
+include $(DEVICE_PATH)/QBoardConfig.mk
