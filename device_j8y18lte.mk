@@ -124,6 +124,9 @@ PRODUCT_COPY_FILES += \
 # QCOM MSM8953 modules
 include $(DEVICE_PATH)/qcom.mk
 
+# Device modules
+include $(DEVICE_PATH)/device.mk
+
 # Disable adb security
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	ro.mount.fs=EXT4 \
