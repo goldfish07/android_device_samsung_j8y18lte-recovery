@@ -7,6 +7,9 @@ $(call inherit-product-if-exists, vendor/samsung/j8y18lte/j8y18lte-vendor.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/samsung/j8y18lte/overlay
 
+# Tree PATH j8y18lte 
+DEVICE_PATH := device/samsung/j8y18lte
+
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
