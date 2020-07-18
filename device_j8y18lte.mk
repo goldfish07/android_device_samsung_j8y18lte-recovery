@@ -120,6 +120,10 @@ include $(DEVICE_PATH)/hidl.mk
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/manifest.xml:$(TARGET_COPY_OUT_VENDOR)/manifest.xml
 
+
+# QCOM MSM8953 modules
+include $(DEVICE_PATH)/qcom.mk
+
 # Disable adb security
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	ro.mount.fs=EXT4 \
