@@ -8,7 +8,7 @@ OLD_PLATFORM := \
 	8.0.0 \
 	8.1.0 \
 
-ifeq ($(filter OLD_PLATFORM,$(PLATFORM_VERSION)),)
+ifeq ($(strip OLD_PLATFORM,$(PLATFORM_VERSION)),)
 
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT :=  armv7-a-neon
@@ -63,7 +63,7 @@ BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom msm_rtb.filter=0x
 
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_TAGS_OFFSET)
 
-ifeq (,$(filter $(PLATFORM_VERSION),OLD_PLATFORM))
+ifeq (,$(strip $(PLATFORM_VERSION),OLD_PLATFORM))
 # Kernel toolchains
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin
