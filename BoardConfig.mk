@@ -63,9 +63,11 @@ BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom msm_rtb.filter=0x
 
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_TAGS_OFFSET)
 
+ifeq (,$(filter $(PLATFORM_VERSION),OLD_PLATFORM))
 # Kernel toolchains
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin
+endif
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 33554432 #25
