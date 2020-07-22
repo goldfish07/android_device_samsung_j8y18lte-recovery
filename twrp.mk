@@ -27,4 +27,4 @@ TW_EXCLUDE_DEFAULT_USB_INIT := true
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 
-PRODUCT_COPY_FILES += $(DEVICE_PATH)/recovery.fstab:recovery/root/etc/recovery.fstab
+PRODUCT_COPY_FILES += $(DEVICE_PATH)/recovery.fstab:recovery/root/system/etc/recovery.fstab
