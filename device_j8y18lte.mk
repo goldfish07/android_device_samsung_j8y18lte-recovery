@@ -18,11 +18,13 @@ TARGET_SCREEN_WIDTH := 720
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom \
-    init.qcom.rc \
-    init.qcom.usb.rc \
+    init.j8y18lte \
     init.msm.usb.configfs.rc \
     init.qcom.factory.rc \
-    init.carrier.rc \
+    init.qcom.rc \
+    init.qcom.usb.rc \
+    init.samsung.bsp.rc \
+    init.samsung.rc \
     init.target.rc \
     ueventd.rc \
 
