@@ -8,7 +8,7 @@ OLD_PLATFORM := \
 	8.0.0 \
 	8.1.0 \
 
-ifeq ($(filter OLD_PLATFORM,$(PLATFORM_VERSION)),)
+ifeq ($(strip OLD_PLATFORM,$(PLATFORM_VERSION)),)
 
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT :=  armv7-a-neon
