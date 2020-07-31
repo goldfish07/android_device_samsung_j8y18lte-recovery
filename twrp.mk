@@ -2,6 +2,7 @@
 TARGET_RECOVERY_DEVICE_DIRS := $(DEVICE_PATH)/twrp
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun/file
 TARGET_HW_DISK_ENCRYPTION := true
+TARGET_CRYPTFS_HW_PATH := "vendor/qcom/opensource/cryptfs_hw"
 RECOVERY_VARIANT := twrp
 TW_THEME := portrait_hdpi
 RECOVERY_SDCARD_ON_DATA := true
