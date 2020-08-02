@@ -32,7 +32,7 @@
 /system_image    emmc      /dev/block/bootdevice/by-name/system                   flags=slotselect
 /preload         ext4      /dev/block/bootdevice/by-name/hidden                   defaults               
 /data            ext4      /dev/block/bootdevice/by-name/userdata                 flags=encryptable=ice
-#/cache          ext4      /dev/block/bootdevice/by-name/cache                    defaults
+/cache           ext4      /dev/block/bootdevice/by-name/cache                    flags=backup=1;display="cache"
 /efs             ext4      /dev/block/bootdevice/by-name/efs                      flags=backup=1;display=efs
 /persist         ext4      /dev/block/bootdevice/by-name/persist                  flags=backup=1;display="persist"
 
