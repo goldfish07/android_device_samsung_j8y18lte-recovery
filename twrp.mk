@@ -30,6 +30,8 @@ TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID := true
 TW_HAS_MTP := true
 TW_MTP_DEVICE := /dev/usb_mtp_gadget
 
+TW_EXCLUDE_TWRPAPP := true
+
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 
