@@ -29,6 +29,11 @@ PRODUCT_PACKAGES += \
     ueventd.rc \
 
 
+# Time Zone Data
+PRODUCT_COPY_FILES += \
+bionic/libc/zoneinfo/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
+
+
 # Disable adb security
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	ro.mount.fs=EXT4 \
