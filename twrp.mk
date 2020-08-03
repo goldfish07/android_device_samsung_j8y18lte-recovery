@@ -1,6 +1,6 @@
 
 TARGET_RECOVERY_DEVICE_DIRS := $(DEVICE_PATH)/twrp
-TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/soc/7000000.ssusb/7000000.dw3/gadget/lun.%d/file"
+TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/soc/7000000.ssusb/7000000.dwc3/gadget/lun%d/file"
 TARGET_HW_DISK_ENCRYPTION := true
 TARGET_CRYPTFS_HW_PATH := "vendor/qcom/opensource/cryptfs_hw"
 
@@ -15,6 +15,7 @@ TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/virtual/thermal/thermal_zone1/temp"
 TW_NO_REBOOT_BOOTLOADER := true
 TW_HAS_DOWNLOAD_MODE := true
 TW_INCLUDE_CRYPTO := true
+TW_INCLUDE_FBE := true
 
 TW_EXCLUDE_SUPERSU := true
 TW_INCLUDE_NTFS_3G := true
