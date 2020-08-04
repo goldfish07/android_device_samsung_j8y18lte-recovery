@@ -28,10 +28,13 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     ueventd.rc \
 
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.treble.enabled=true \
+    sys.usb.controller=7000000.dwc3
 
 # Time Zone Data
 PRODUCT_COPY_FILES += \
-bionic/libc/zoneinfo/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
+ system/timezone/output_data/iana/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
 
 
 # Disable adb security

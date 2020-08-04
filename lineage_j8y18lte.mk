@@ -7,6 +7,7 @@ PRODUCT_RELEASE_NAME := j8y18lte
 
 # Inherit some common lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, build/target/product/embedded.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/samsung/j8y18lte/device_j8y18lte.mk)
