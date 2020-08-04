@@ -1,13 +1,13 @@
 
-TARGET_RECOVERY_DEVICE_DIRS := $(DEVICE_PATH)/twrp
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun/file
+#TARGET_RECOVERY_DEVICE_DIRS := $(DEVICE_PATH)/twrp
+#TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun/file
 TARGET_HW_DISK_ENCRYPTION := true
 TARGET_CRYPTFS_HW_PATH := "vendor/qcom/opensource/commonsys/cryptfs_hw"
 RECOVERY_VARIANT := twrp
 TW_THEME := portrait_hdpi
 RECOVERY_SDCARD_ON_DATA := true
 BOARD_HAS_NO_REAL_SDCARD := true
-TARGET_RECOVERY_PIXEL_FORMAT := "ABGR_8888"
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888" #"ABGR_8888"
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TW_CUSTOM_BATTERY_PATH := "/sys/devices/battery/power_supply/battery"
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/virtual/thermal/thermal_zone1/temp"
@@ -24,9 +24,18 @@ TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
 TW_DEVICE_VERSION := goldfish07(Ayush Bisht)
 TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID := true
-TW_EXCLUDE_DEFAULT_USB_INIT := true
+#TW_EXCLUDE_DEFAULT_USB_INIT := true
 
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
+
+#OFRP
+OF_KEEP_DM_VERITY=1
+OF_KEEP_FORCED_ENCRYPTION=1
+OF_KEEP_DM_VERITY_FORCED_ENCRYPTION=1
+OF_MAINTAINER=goldfish(Ayush Bisht)
+OF_FLASHLIGHT_ENABLE=0
+FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
+
 
 PRODUCT_COPY_FILES += $(DEVICE_PATH)/recovery.fstab:recovery/root/system/etc/recovery.fstab
