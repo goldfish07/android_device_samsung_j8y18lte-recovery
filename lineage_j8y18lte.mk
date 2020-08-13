@@ -20,7 +20,7 @@ PRODUCT_MODEL := j8y18lte
 PRODUCT_MANUFACTURER := samsung
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="j8y18ltedd-user 9 PPR1.180610.011 J810GDDU3BTF1 release-keys"
+    PRIVATE_BUILD_DESC="j8y18ltedd-user 10 QP1A.190711.020 J810GDDU3CTG3 release-keys"
 
 #BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
-BUILD_FINGERPRINT := samsung/j8y18ltedd/j8y18lte:9/PPR1.180610.011/J810GDDU3BTF1:user/release-keys
+BUILD_FINGERPRINT := samsung/j8y18ltedd/j8y18lte:10/QP1A.190711.020/J810GDDU3CTG3:user/release-keys
