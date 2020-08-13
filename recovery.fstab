@@ -28,7 +28,7 @@
 #<MP>     <type>  <src>                                                         <flags and options>          
 /boot            emmc      /dev/block/bootdevice/by-name/boot                     flags=slotselect
 /recovery        emmc      /dev/block/bootdevice/by-name/recovery                 flags=slotselect
-/system          ext4      /dev/block/bootdevice/by-name/system                   flags=slotselect
+/system_root     ext4      /dev/block/bootdevice/by-name/system                   flags=slotselect;display="system"
 /system_image    emmc      /dev/block/bootdevice/by-name/system                   flags=slotselect
 /preload         ext4      /dev/block/bootdevice/by-name/hidden                   defaults               
 /data            ext4      /dev/block/bootdevice/by-name/userdata                 flags=encryptable=ice

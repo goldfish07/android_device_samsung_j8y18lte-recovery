@@ -25,6 +25,9 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
+on fs 
+    export ANDROID_ROOT /system_root
+
 on init
     write /sys/class/backlight/panel0-backlight/brightness 200
 
