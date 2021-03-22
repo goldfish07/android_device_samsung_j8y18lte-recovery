@@ -5,7 +5,6 @@ $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
 $(call inherit-product-if-exists, vendor/samsung/j8y18lte/j8y18lte-vendor.mk)
 
-DEVICE_PACKAGE_OVERLAYS += device/samsung/j8y18lte/overlay
 
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
@@ -14,19 +13,6 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 # Resolution
 TARGET_SCREEN_HEIGHT := 1480
 TARGET_SCREEN_WIDTH := 720
-
-# Ramdisk
-PRODUCT_PACKAGES += \
-    fstab.qcom \
-    init.j8y18lte \
-    init.msm.usb.configfs.rc \
-    init.qcom.factory.rc \
-    init.qcom.rc \
-    init.qcom.usb.rc \
-    init.samsung.bsp.rc \
-    init.samsung.rc \
-    init.target.rc \
-    ueventd.rc \
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.treble.enabled=true \
