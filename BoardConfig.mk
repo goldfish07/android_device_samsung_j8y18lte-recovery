@@ -42,29 +42,18 @@ TARGET_BOOTLOADER_BOARD_NAME := MSM8953
 TARGET_BOARD_SUFFIX := _64
 TARGET_USES_64_BIT_BINDER := true
 
-BUILD_PREBUILT_KERNEL:= false
-
 # Kernel
 TARGET_KERNEL_ARCH := arm64
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_RAMDISK_OFFSET := 0x02000000
 BOARD_TAGS_OFFSET := 0x01e00000
 BOARD_KERNEL_PAGESIZE := 2048
-ifeq ($(BUILD_PREBUILT_KERNEL),true)
-$(warning BUILD_PREBUILT_KERNEL is enabled, will use prebuilt kernel)
+BUILD_PREBUILT_KERNEL:= true
 TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilt/Image.gz-dtb
-else 
-TARGET_KERNEL_SOURCE := kernel/samsung/j8y18lte
-TARGET_KERNEL_CONFIG := j8y18lte_defconfig
-endif
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 androidboot.selinux=permissive androidboot.usbcontroller=7000000.dwc3
 
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_TAGS_OFFSET)
-
-# Kernel toolchains
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
-KERNEL_TOOLCHAIN := prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 33554432 #25
