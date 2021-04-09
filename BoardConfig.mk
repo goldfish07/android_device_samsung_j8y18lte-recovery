@@ -18,20 +18,7 @@ LOCAL_PATH := $(call my-dir)
 DEVICE_PATH := device/samsung/j8y18lte
 # inherit from the proprietary version
 -include vendor/samsung/j8y18lte/BoardConfigVendor.mk
-
-OLD_PLATFORM := \
-	8.0.0 \
-	8.1.0 \
-
-ifeq ($(strip OLD_PLATFORM,$(PLATFORM_VERSION)),)
-
-TARGET_ARCH := arm
-TARGET_ARCH_VARIANT :=  armv7-a-neon
-TARGET_CPU_ABI := armeabi-v7a
-TARGET_CPU_ABI2 := armeabi
-TARGET_CPU_VARIANT := cortex-a53
-
-else 
+ 
 TARGET_ARCH := arm64
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
@@ -43,7 +30,7 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_ARCH_VARIANT := armv8-a
 TARGET_2ND_CPU_VARIANT := cortex-a53
-endif
+
 TARGET_CPU_CORTEX_A53 := true
 
 TARGET_NO_BOOTLOADER := true
@@ -78,11 +65,10 @@ BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom msm_rtb.filter=0x
 
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_TAGS_OFFSET)
 
-ifeq ($(strip OLD_PLATFORM,$(PLATFORM_VERSION)),)
 # Kernel toolchains
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 KERNEL_TOOLCHAIN := prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin
-endif
+
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 33554432 #25
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 33554432 #26
