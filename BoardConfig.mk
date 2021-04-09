@@ -12,10 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
-USE_CAMERA_STUB := true
-LOCAL_PATH := $(call my-dir)
-DEVICE_PATH := device/samsung/j8y18lte
+LOCAL_PATH := device/samsung/j8y18lte
 # inherit from the proprietary version
 -include vendor/samsung/j8y18lte/BoardConfigVendor.mk
  
@@ -55,7 +52,7 @@ BOARD_TAGS_OFFSET := 0x01e00000
 BOARD_KERNEL_PAGESIZE := 2048
 ifeq ($(BUILD_PREBUILT_KERNEL),true)
 $(warning BUILD_PREBUILT_KERNEL is enabled, will use prebuilt kernel)
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image.gz-dtb
+TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilt/Image.gz-dtb
 else 
 TARGET_KERNEL_SOURCE := kernel/samsung/j8y18lte
 TARGET_KERNEL_CONFIG := j8y18lte_defconfig
@@ -82,7 +79,6 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 # system as root
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 
-
 #Init
 TARGET_INIT_VENDOR_LIB := libinit_j8y18lte
 TARGET_RECOVERY_DEVICE_MODULES := libinit_j8y18lte
@@ -96,8 +92,8 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 BOARD_HAS_DOWNLOAD_MODE := true
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery.fstab
 
 # filesystem
 TARGET_USES_MKE2FS:=true
-include $(DEVICE_PATH)/twrp.mk
+include $(LOCAL_PATH)/twrp.mk
