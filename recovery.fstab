@@ -40,7 +40,7 @@
 
 /preload         ext4      /dev/block/bootdevice/by-name/hidden                   flags=display="Preload"               
 /data            ext4      /dev/block/bootdevice/by-name/userdata                 flags=encryptable=ice
-/cache           ext4      /dev/block/bootdevice/by-name/cache                    display="cache"
+/cache           ext4      /dev/block/bootdevice/by-name/cache
 /efs             ext4      /dev/block/bootdevice/by-name/efs                      flags=backup=1;display=EFS
 /persist         ext4      /dev/block/bootdevice/by-name/persist                  flags=backup=0;display="Persist"
 
