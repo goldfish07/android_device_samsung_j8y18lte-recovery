@@ -20,4 +20,4 @@ Device Tree for SM-J810G model only
 
 ## Device picture
 
-![Samsung Galaxy J8](/Img/device_img.png)
+![Samsung Galaxy J8](/Img/device_img.png) 
