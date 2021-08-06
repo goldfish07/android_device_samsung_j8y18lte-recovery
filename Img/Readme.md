@@ -1,1 +1,0 @@
-![OnePlus 3](/Img/device_img.png "OnePlus 3 in grey")
