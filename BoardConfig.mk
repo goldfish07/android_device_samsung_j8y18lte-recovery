@@ -1,22 +1,21 @@
-USE_CAMERA_STUB := true
-LOCAL_PATH := $(call my-dir)
-DEVICE_PATH := device/samsung/j8y18lte
+# Copyright (C) 2017-2020 The LineageOS Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+LOCAL_PATH := device/samsung/j8y18lte
 # inherit from the proprietary version
 -include vendor/samsung/j8y18lte/BoardConfigVendor.mk
-
-OLD_PLATFORM := \
-	8.0.0 \
-	8.1.0 \
-
-ifeq ($(strip OLD_PLATFORM,$(PLATFORM_VERSION)),)
-
-TARGET_ARCH := arm
-TARGET_ARCH_VARIANT :=  armv7-a-neon
-TARGET_CPU_ABI := armeabi-v7a
-TARGET_CPU_ABI2 := armeabi
-TARGET_CPU_VARIANT := cortex-a53
-
-else 
+ 
 TARGET_ARCH := arm64
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
@@ -28,7 +27,7 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_ARCH_VARIANT := armv8-a
 TARGET_2ND_CPU_VARIANT := cortex-a53
-endif
+
 TARGET_CPU_CORTEX_A53 := true
 
 TARGET_NO_BOOTLOADER := true
@@ -43,31 +42,20 @@ TARGET_BOOTLOADER_BOARD_NAME := MSM8953
 TARGET_BOARD_SUFFIX := _64
 TARGET_USES_64_BIT_BINDER := true
 
-BUILD_PREBUILT_KERNEL:= false
-
 # Kernel
 TARGET_KERNEL_ARCH := arm64
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_RAMDISK_OFFSET := 0x02000000
 BOARD_TAGS_OFFSET := 0x01e00000
 BOARD_KERNEL_PAGESIZE := 2048
-ifeq ($(BUILD_PREBUILT_KERNEL),true)
-$(warning BUILD_PREBUILT_KERNEL is enabled, will use prebuilt kernel)
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image.gz-dtb
-else 
+#TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilt/Image.gz-dtb
 TARGET_KERNEL_SOURCE := kernel/samsung/j8y18lte
 TARGET_KERNEL_CONFIG := j8y18lte_defconfig
-endif
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 androidboot.selinux=permissive androidboot.usbcontroller=7000000.dwc3
 
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_TAGS_OFFSET)
 
-ifeq ($(strip OLD_PLATFORM,$(PLATFORM_VERSION)),)
-# Kernel toolchains
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
-KERNEL_TOOLCHAIN := prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin
-endif
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 33554432 #25
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 33554432 #26
@@ -78,6 +66,10 @@ BOARD_VENDORIMAGE_PARTITION_SIZE := 503316480 #41
 BOARD_PERSISTIMAGE_PARTITION_SIZE := 1048576 #31
 BOARD_FLASH_BLOCK_SIZE := 131072
 
+#Init
+TARGET_INIT_VENDOR_LIB := libinit_j8y18lte
+TARGET_RECOVERY_DEVICE_MODULES := libinit_j8y18lte
+TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
 
 # Recovery
 BOARD_HAS_NO_SELECT_BUTTON := true
@@ -87,8 +79,8 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 BOARD_HAS_DOWNLOAD_MODE := true
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery.fstab
 
 # filesystem
 TARGET_USES_MKE2FS:=true
-include $(DEVICE_PATH)/twrp.mk
+include $(LOCAL_PATH)/twrp.mk
